@@ -1,8 +1,8 @@
-console.log('✅ +page.server.ts is loaded');
 import type { Actions } from './$types';
 import { fail, redirect } from '@sveltejs/kit';
 
 export const actions: Actions = {
+
   signup: async ({ request, locals }) => {
     const form = await request.formData();
     const email = String(form.get('email') ?? '').trim();

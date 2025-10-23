@@ -4,15 +4,16 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "npm exec svelte-kit dev",
-    "build": "npm exec svelte-kit build",
-    "preview": "npm exec svelte-kit preview",
-    "prepare": "npm exec svelte-kit sync || echo ''",
-    "check": "npm exec svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "npm exec svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.3.1",
+    "@sveltejs/adapter-node": "^5.4.0",
     "@sveltejs/kit": "^2.47.3",
     "@sveltejs/vite-plugin-svelte": "^6.2.0",
     "svelte": "^5.41.2",
@@ -25,3 +26,4 @@
     "@supabase/supabase-js": "^2.76.1"
   }
 }
+

@@ -1,14 +1,17 @@
 <script lang="ts">
+	  import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
  	let { children, data } = $props();
 </script>
 {#if data.user}
-	<p>aangemeld</p>
+	  <form method="POST" action="/auth?/logout">
+    <button name="logout" value="1">Logout</button>
+  </form>
   {:else}
-  <p>niet aangemeld</p>
+  <p><a href="/auth">inloggen</a></p>
 {/if}
 <nav>
-	 <a href="/">root</a> | <a href="/auth/register">auth</a> 
+	 <a href="/">naar homo</a> __ <a href="/profile">profiel</a> __ <a href="/games">gaymes</a>
 </nav>
 <svelte:head>
 	<link rel="icon" href={favicon} />

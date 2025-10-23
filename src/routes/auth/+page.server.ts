@@ -1,5 +1,5 @@
 import type { Actions } from './$types';
-
+import { fail, redirect } from '@sveltejs/kit';
 export const actions: Actions = {
   login: async ({ request, locals }) => {
     const form = await request.formData();
@@ -9,8 +9,9 @@ export const actions: Actions = {
 
     return error ? { success: false, message: error.message } : { success: true };
   },
+
   logout: async ({ locals }) => {
-    await locals.supabase.auth.signOut();
-    return { success: true };
+    await locals.supabase.auth.signOut(); // verwijdert sessie-cookie
+    throw redirect(303, '/');             // terug naar home (of /auth)
   }
-};
+} satisfies import('./$types').Actions;
