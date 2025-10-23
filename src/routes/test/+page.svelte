@@ -1,0 +1,1 @@
+<form method="POST"><button name="ping" value="1">Ping</button></form>

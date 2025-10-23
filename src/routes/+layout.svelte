@@ -8,7 +8,7 @@
   <p>niet aangemeld</p>
 {/if}
 <nav>
-	 <a href="/">root</a> | <a href="/auth/register">auth</a> | <a href="/test">test</a>
+	 <a href="/">root</a> | <a href="/auth/register">auth</a> 
 </nav>
 <svelte:head>
 	<link rel="icon" href={favicon} />

@@ -1,10 +1,6 @@
-<script>
-  let { form } = $props();
-</script>
-
 <form method="POST">
-  <input name="email" />
-  <button name="test" value="1">Test action</button>
+  <input type="email" name="email" placeholder="E-mail" required />
+  <input type="password" name="password" placeholder="Wachtwoord" minlength="8" required />
+  <input type="checkbox" name="accept_terms" required />
+  <button name="signup" value="1">Account aanmaken</button>
 </form>
-
-{#if form?.success}<p>Action reached!</p>{/if}
