@@ -1,17 +1,18 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-    import { testje } from '$lib/ding';
-
-	let { children } = $props();
+ 	let { children, data } = $props();
 </script>
-
+{#if data.user}
+	<p>aangemeld</p>
+  {:else}
+  <p>niet aangemeld</p>
+{/if}
 <nav>
-	 <a href="/">Home</a> | <a href="/test">Over</a>
+	 <a href="/">root</a> | <a href="/auth/register">auth</a> | <a href="/test">test</a>
 </nav>
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
-
 
 
 {@render children?.()}
